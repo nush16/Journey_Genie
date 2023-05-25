@@ -7,7 +7,7 @@ import Map from "./components/Map/Map";
 
 const App = () => {
     const [places, setPlaces] = useState([]); // State for the Places
-    const [coordinates, setCoordinates] = useState({}); // State for the Coordinates
+    const [coordinates, setCoordinates] = useState({lat: 0, lng: 0}); // State for the Coordinates
     const [bounds, setBounds] = useState({}); // State for the Bounds
 
    // Get location data from API 
@@ -30,7 +30,12 @@ const App = () => {
                 </Grid>
 
                 <Grid item xs={12} md={8}>
-                    <Map />
+                    {/* Props to be passed to the Map component */}
+                    <Map 
+                    setCoordinates={setCoordinates}
+                    setBounds={setBounds}
+                    coordinates = {coordinates}
+                    />
                 </Grid>
             </Grid>
         
