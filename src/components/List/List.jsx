@@ -3,12 +3,8 @@ import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, 
 import useStyles from './Liststyles.js';
 import PlaceDetails from '../PlaceDetails/PlaceDetails.jsx'
 
-const List = ({places, childClicked, loading}) => {
+const List = ({places, childClicked, loading, type, setType, rating, setRating }) => {
     const classes = useStyles();
-    // State for the selected type
-    const [type, setType] = useState('');
-    // State for the selected type
-    const[rating, setRating] = useState('');
 
     const [elRefs, setElRefs] = useState([]);
     

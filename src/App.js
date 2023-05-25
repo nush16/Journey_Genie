@@ -11,6 +11,8 @@ const App = () => {
     const [bounds, setBounds] = useState({}); // State for the Bounds
     const[childClicked, setChildClicked] = useState(null); // State for the Clicked
     const [loading, setLoading] = useState(false) // State for the Loading
+    const [type, setType] = useState('restaurants');// State for the selected type
+    const[rating, setRating] = useState('');// State for the selected rating
 
     //Get current location
     useEffect(() => {
@@ -26,13 +28,13 @@ const App = () => {
     useEffect(() => {
         setLoading(true)
         // Fetch data using the getPlacesData function
-        getPlacesData(bounds.sw, bounds.ne)
+        getPlacesData(type, bounds.sw, bounds.ne)
             .then((data) => {
                 // Update the state with the fetched data
                 setPlaces(data);
                 setLoading(false)
             })
-      }, [coordinates, bounds]);
+      }, [type, bounds]);
 
     return (
         <>
@@ -44,6 +46,10 @@ const App = () => {
                     places ={places}
                     childClicked={childClicked}
                     loading={loading}
+                    type={type}
+                    setType={setType}
+                    rating={rating}
+                    setRating={setRating}
                     />
                 </Grid>
 
