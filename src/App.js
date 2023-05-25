@@ -9,10 +9,11 @@ const App = () => {
     const [places, setPlaces] = useState([]); // State for the Places
     const [coordinates, setCoordinates] = useState({}); // State for the Coordinates
     const [bounds, setBounds] = useState({}); // State for the Bounds
-    const[childClicked, setChildClicked] = useState(null); // State for the Clicked
+    const [childClicked, setChildClicked] = useState(null); // State for the Clicked
     const [loading, setLoading] = useState(false) // State for the Loading
     const [type, setType] = useState('restaurants');// State for the selected type
-    const[rating, setRating] = useState('');// State for the selected rating
+    const [rating, setRating] = useState('');// State for the selected rating
+    const [filteredPlaces, setFilteredPlaces] = useState([]); // State for the filter
 
     //Get current location
     useEffect(() => {
@@ -23,6 +24,11 @@ const App = () => {
         });
       }, []); 
 
+    //Filter Ratings
+    useEffect(() => {
+        const filteredPlaces = places.filter((place) => Number(place.rating) > rating); // Filters the 'places' array based on the condition: place.rating > rating.
+        setFilteredPlaces(filteredPlaces); // Updates the 'filteredPlaces' state with the filtered array.
+      }, [rating]);
 
    // Get location data from API 
     useEffect(() => {
@@ -33,6 +39,7 @@ const App = () => {
                 // Update the state with the fetched data
                 setPlaces(data);
                 setLoading(false)
+                setFilteredPlaces([])
             })
       }, [type, bounds]);
 
@@ -43,7 +50,7 @@ const App = () => {
             <Grid container spacing={3} style={{ width: '100%'}}>
                 <Grid item xs={12} md={4}>
                     <List 
-                    places ={places}
+                    places={filteredPlaces.length ? filteredPlaces : places}
                     childClicked={childClicked}
                     loading={loading}
                     type={type}
@@ -59,7 +66,7 @@ const App = () => {
                     setCoordinates={setCoordinates}
                     setBounds={setBounds}
                     coordinates = {coordinates}
-                    places ={places}
+                    places={filteredPlaces.length ? filteredPlaces : places}
                     setChildClicked={setChildClicked}
                     />
                 </Grid>
