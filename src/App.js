@@ -23,7 +23,7 @@ const App = () => {
    // Get location data from API 
     useEffect(() => {
         // Fetch data using the getPlacesData function
-        getPlacesData()
+        getPlacesData(bounds.sw, bounds.ne)
             .then((data) => {
                 // Update the state with the fetched data
                 setPlaces(data);
