@@ -32,15 +32,17 @@ const App = () => {
 
    // Get location data from API 
     useEffect(() => {
+        if (bounds.sw && bounds.ne) {
         setLoading(true)
         // Fetch data using the getPlacesData function
         getPlacesData(type, bounds.sw, bounds.ne)
             .then((data) => {
                 // Update the state with the fetched data
-                setPlaces(data);
+                setPlaces(data?.filter((place) => place.name && place.num_reviews > 0)); // Filters the 'data' array to set the 'places' state with places that have a name and more than 0 reviews.
                 setLoading(false)
                 setFilteredPlaces([])
             })
+        }
       }, [type, bounds]);
 
     return (
