@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import GoogleMapReact from 'google-map-react';
 import { Paper, Typography, useMediaQuery } from '@material-ui/core';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
@@ -6,10 +6,13 @@ import Rating from '@material-ui/lab/Rating';
 
 import useStyles from './MapStyles.js';
 
-const Map = ({setCoordinates, setBounds, coordinates}) => {
+
+const Map = ({setCoordinates, setBounds, coordinates, places}) => {
     //Check screen size
-    const isMobile = useMediaQuery('(min-width:600px)');
+    const isDesktop = useMediaQuery('(min-width:600px)');
     
+    const[childClicked, setChildClicked] = useState(null)
+
     const classes = useStyles();
 
     // Set initial coordinates for the map
@@ -32,8 +35,34 @@ const Map = ({setCoordinates, setBounds, coordinates}) => {
           // Update the bounds state with the northeast and southwest boundaries from the event
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
       }}
-        // onChildClick={''} // To handle clicks on child elements of the map
-      > 
+        onChildClick={(child) => setChildClicked(child)} // To handle clicks on child elements of the map
+        > 
+        {places?.map((place, i) => ( // Maps through the 'places' array to render markers for each place.
+  <div
+    className={classes.markerContainer} // Applies the 'markerContainer' class to the div element.
+    lat={Number(place.latitude)} // Sets the latitude as a prop on the div element.
+    lng={Number(place.longitude)} // Sets the longitude as a prop on the div element.
+    key={i} // Sets a unique key for the marker div.
+  >
+    {
+      !isDesktop ? ( // Checks if the current device is not a desktop
+        <LocationOnOutlinedIcon color="primary" fontSize="large" /> // Renders a location icon for non-desktop devices
+      ) : (
+        <Paper elevation={3} className={classes.paper}> 
+        {/* Displays the name of the place  */}
+          <Typography className={classes.typography} variant="subtitle2" gutterBottom>{place.name}</Typography> 
+          <img
+            className={classes.pointer} // Applies the 'pointer' class to the image
+            src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'} // Sets the image source with a fallback URL.
+            alt={place.name} // Adds the name of the place as the alt text for the image
+          />
+          {/* Displays a read-only rating component for the place */}
+          <Rating name="read-only" size="small" value={Number(place.rating)} readOnly /> 
+        </Paper>
+      )
+    }
+  </div>
+        ))}
       </GoogleMapReact>
     </div>
   );
