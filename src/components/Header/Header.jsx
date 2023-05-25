@@ -18,7 +18,7 @@ const Header = () => {
                 <Box display="flex">
                     {/* display Subtitle with additional information */}
                     <Typography variant ="h6" className={classes.title}>
-                        Whats around me?
+                        Where do you want to go?
                     </Typography>
                     {/* Allows users to select from a predefined set of options */}
                     {/* <Autocomplete> */}
