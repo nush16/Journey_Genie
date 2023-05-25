@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { Grid, Typography, InputLabel, MenuItem, FormControl, Select } from '@material-ui/core';
 import useStyles from './Liststyles.js';
-
+import PlaceDetails from '../PlaceDetails/PlaceDetails.jsx'
 
 const List = () => {
     const classes = useStyles();
@@ -10,6 +10,9 @@ const List = () => {
     // State for the selected type
     const[rating, setRating] = useState('');
     
+    // Dummy to render on lists
+    const place = [{name:'TBA'}, {name:'TBA'}, {name:'TBA'}, {name:'TBA'}];
+
     return (
         <div className={classes.container}>
             {/* Heading */}
@@ -35,9 +38,20 @@ const List = () => {
                         <MenuItem value="4">Above 4.0</MenuItem>
                         <MenuItem value="4.5">Above 4.5</MenuItem>
                     </Select>
-                </FormControl>
+                    </FormControl>
+                
+                {/* Display the place */}
+                <Grid container spacing={3} className={classes.list}>
+                    {/* Rendering place details */}
+                    {place?.map((place, i) => (
+                    <Grid item key={i} xs={12}>
+                        <PlaceDetails place={place} />
+                  </Grid>
+            ))}
+          </Grid>
     </div>
   );
 };
+
 
 export default List;
