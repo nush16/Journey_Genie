@@ -7,8 +7,18 @@ import Map from "./components/Map/Map";
 
 const App = () => {
     const [places, setPlaces] = useState([]); // State for the Places
-    const [coordinates, setCoordinates] = useState({lat: 0, lng: 0}); // State for the Coordinates
+    const [coordinates, setCoordinates] = useState({}); // State for the Coordinates
     const [bounds, setBounds] = useState({}); // State for the Bounds
+
+    //Get current location
+    useEffect(() => {
+         // Use the navigator.geolocation API to get the current position of the device
+        navigator.geolocation.getCurrentPosition(({coords: {latitude, longitude}}) => { //extract the latitude and longitude values
+            //store values in the state using setCoordinates
+            setCoordinates({lat: latitude, lng: longitude});
+        });
+      }, []); 
+
 
    // Get location data from API 
     useEffect(() => {
@@ -18,7 +28,7 @@ const App = () => {
                 // Update the state with the fetched data
                 setPlaces(data);
             })
-      }, []);
+      }, [coordinates, bounds]);
 
     return (
         <>
