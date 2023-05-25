@@ -3,7 +3,7 @@ import { Grid, Typography, InputLabel, MenuItem, FormControl, Select } from '@ma
 import useStyles from './Liststyles.js';
 import PlaceDetails from '../PlaceDetails/PlaceDetails.jsx'
 
-const List = () => {
+const List = ({places}) => {
     const classes = useStyles();
     // State for the selected type
     const [type, setType] = useState('');
@@ -11,7 +11,7 @@ const List = () => {
     const[rating, setRating] = useState('');
     
     // Dummy to render on lists
-    const place = [{name:'TBA'}, {name:'TBA'}, {name:'TBA'}, {name:'TBA'}];
+    // const place = [{name:'TBA'}, {name:'TBA'}, {name:'TBA'}, {name:'TBA'}];
 
     return (
         <div className={classes.container}>
@@ -43,7 +43,7 @@ const List = () => {
                 {/* Display the place */}
                 <Grid container spacing={3} className={classes.list}>
                     {/* Rendering place details */}
-                    {place?.map((place, i) => (
+                    {places?.map((place, i) => (
                     <Grid item key={i} xs={12}>
                         <PlaceDetails place={place} />
                   </Grid>

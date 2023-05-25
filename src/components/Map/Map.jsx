@@ -32,7 +32,7 @@ const Map = ({setCoordinates, setBounds, coordinates}) => {
           // Update the bounds state with the northeast and southwest boundaries from the event
           setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
       }}
-        onChildClick={''} // To handle clicks on child elements of the map
+        // onChildClick={''} // To handle clicks on child elements of the map
       > 
       </GoogleMapReact>
     </div>
