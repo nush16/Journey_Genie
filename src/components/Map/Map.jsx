@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import { Paper, Typography, useMediaQuery } from '@material-ui/core';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import Rating from '@material-ui/lab/Rating';
-
+// import Design from './mapDesign.js';
 import useStyles from './MapStyles.js';
 
 
@@ -25,7 +25,7 @@ const Map = ({setCoordinates, setBounds, coordinates, places, setChildClicked}) 
         center={coordinates} // Set the current center of the map
         defaultZoom={14} // Set the default zoom level of the map
         margin={[50, 50, 50, 50]} // Set margins for the map container
-        options={''} // Customize map options
+        options={{disableDefaultUI: true, zoomControl: true}} // Customize map options
         // Handle map changes
         onChange={(e) => {
           // Update the coordinates state with the center latitude and longitude from the event

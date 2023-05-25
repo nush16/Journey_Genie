@@ -47,33 +47,35 @@ const App = () => {
 
     return (
         <>
-            <CssBaseline />
-            <Header setCoordinates={setCoordinates} />
-            <Grid container spacing={3} style={{ width: '100%'}}>
-                <Grid item xs={12} md={4}>
-                    <List 
-                    places={filteredPlaces.length ? filteredPlaces : places}
-                    childClicked={childClicked}
-                    loading={loading}
-                    type={type}
-                    setType={setType}
-                    rating={rating}
-                    setRating={setRating}
-                    />
-                </Grid>
+        {/* Applies a baseline CSS reset to the component */}
+        <CssBaseline /> 
+        {/* Renders the Header component with the 'setCoordinates' prop */}
+        <Header setCoordinates={setCoordinates} /> 
+        <Grid container spacing={3} style={{ width: '100%' }}> 
+        <Grid item xs={12} md={4}> 
+            <List 
+            places={filteredPlaces.length ? filteredPlaces : places} // Passes the filtered places array if it exists, otherwise passes the original places array.
+            childClicked={childClicked} // Passes the 'childClicked' state as a prop.
+            loading={loading} // Passes the 'loading' state as a prop.
+            type={type} // Passes the 'type' state as a prop.
+            setType={setType} // Passes the 'setType' function as a prop.
+            rating={rating} // Passes the 'rating' state as a prop.
+            setRating={setRating} // Passes the 'setRating' function as a prop.
+            />
+        </Grid>
 
-                <Grid item xs={12} md={8}>
-                    {/* Props to be passed to the Map component */}
-                    <Map 
-                    setCoordinates={setCoordinates}
-                    setBounds={setBounds}
-                    coordinates = {coordinates}
-                    places={filteredPlaces.length ? filteredPlaces : places}
-                    setChildClicked={setChildClicked}
-                    />
-                </Grid>
-            </Grid>
-        
+        <Grid item xs={12} md={8}> 
+            {/* Props to be passed to the Map component */}
+            <Map 
+            setCoordinates={setCoordinates} // Passes the 'setCoordinates' function as a prop.
+            setBounds={setBounds} // Passes the 'setBounds' function as a prop.
+            coordinates={coordinates} // Passes the 'coordinates' state as a prop.
+            places={filteredPlaces.length ? filteredPlaces : places} // Passes the filtered places array if it exists, otherwise passes the original places array.
+            setChildClicked={setChildClicked} // Passes the 'setChildClicked' function as a prop.
+            />
+        </Grid>
+        </Grid>
+                
         </>
     );
 }
