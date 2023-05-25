@@ -9,6 +9,8 @@ const App = () => {
     const [places, setPlaces] = useState([]); // State for the Places
     const [coordinates, setCoordinates] = useState({}); // State for the Coordinates
     const [bounds, setBounds] = useState({}); // State for the Bounds
+    const[childClicked, setChildClicked] = useState(null); // State for the Clicked
+    const [loading, setLoading] = useState(false) // State for the Loading
 
     //Get current location
     useEffect(() => {
@@ -22,11 +24,13 @@ const App = () => {
 
    // Get location data from API 
     useEffect(() => {
+        setLoading(true)
         // Fetch data using the getPlacesData function
         getPlacesData(bounds.sw, bounds.ne)
             .then((data) => {
                 // Update the state with the fetched data
                 setPlaces(data);
+                setLoading(false)
             })
       }, [coordinates, bounds]);
 
@@ -36,7 +40,10 @@ const App = () => {
             <Header />
             <Grid container spacing={3} style={{ width: '100%'}}>
                 <Grid item xs={12} md={4}>
-                    <List places ={places}
+                    <List 
+                    places ={places}
+                    childClicked={childClicked}
+                    loading={loading}
                     />
                 </Grid>
 
@@ -47,6 +54,7 @@ const App = () => {
                     setBounds={setBounds}
                     coordinates = {coordinates}
                     places ={places}
+                    setChildClicked={setChildClicked}
                     />
                 </Grid>
             </Grid>

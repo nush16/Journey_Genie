@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { Paper, Typography, useMediaQuery } from '@material-ui/core';
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
@@ -7,11 +7,9 @@ import Rating from '@material-ui/lab/Rating';
 import useStyles from './MapStyles.js';
 
 
-const Map = ({setCoordinates, setBounds, coordinates, places}) => {
+const Map = ({setCoordinates, setBounds, coordinates, places, setChildClicked}) => {
     //Check screen size
     const isDesktop = useMediaQuery('(min-width:600px)');
-    
-    const[childClicked, setChildClicked] = useState(null)
 
     const classes = useStyles();
 
