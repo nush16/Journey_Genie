@@ -25,7 +25,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
     // Returns a Card component with elevation set to 6 for a raised appearance
     <Card elevation={6} className={classes.card}>
       <CardMedia // Displays media content within the Card component
-        style={{ height: 350 }} // Sets the height of the media content
+        style={{ height: 250 }} // Sets the height of the media content
         image={
           place.photo
             ? place.photo.images.large.url

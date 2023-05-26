@@ -14,11 +14,10 @@ export default makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#101111",
+    color: "#8731EB",
   },
   container: {
     padding: "25px",
-    backgroundColor: "#101111",
   },
   marginBottom: {
     marginBottom: "30px",
@@ -29,8 +28,10 @@ export default makeStyles((theme) => ({
   },
   title: {
     color: "#8731EB",
+    fontWeight: 700,
   },
   listItem: {
-    color: "#EBECF3",
+    color: "#8731EB",
+    fontWeight: 500,
   },
 }));

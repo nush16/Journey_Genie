@@ -27,10 +27,10 @@ const List = ({
   useEffect(() => {
     // Runs the effect when the component mounts or when the 'places' dependency changes
     setElRefs((refs) =>
-      Array(places?.length)
-        .fill()
+      Array(places?.length) // Create an array with a length equal to the number of places
+        .fill() // Fill the array with empty values
         .map((_, i) => refs[i] || createRef())
-    ); // Sets the 'elRefs' state to an array of refs created using 'createRef()' for each place.
+    ); // Map over the array and assign each value to a reference
   }, [places]);
 
   // Dummy to render on lists
@@ -46,7 +46,7 @@ const List = ({
         // Renders a loading indicator container with the 'loading' class
         <div className={classes.loading}>
           {/* Renders a CircularProgress component */}
-          <CircularProgress size="5rem" />
+          <CircularProgress size="8rem" style={{ color: "#8731EB" }} />
         </div>
       ) : (
         // If isLoading is false, renders the following content.
@@ -100,9 +100,9 @@ const List = ({
               ) => (
                 <Grid item key={i} xs={12}>
                   <PlaceDetails
-                    place={place} // Passes the current place object as a prop to the PlaceDetails component
                     selected={Number(childClicked) === i} // Checks if the current place is selected based on the childClicked state
                     refProp={elRefs[i]} // Passes the corresponding ref as a prop to the PlaceDetails component
+                    place={place} // Passes the current place object as a prop to the PlaceDetails component
                   />
                 </Grid>
               )
