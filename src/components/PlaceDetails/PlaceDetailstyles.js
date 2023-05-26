@@ -18,7 +18,11 @@ export default makeStyles(() => ({
     color: "#FFFFFF",
   },
   card: {
-    backgroundColor: "#202121",
+    backgroundColor: "#8731EB",
+    color: "#FFFFFF",
+    borderRadius: 25,
+  },
+  links: {
     color: "#FFFFFF",
   },
 }));

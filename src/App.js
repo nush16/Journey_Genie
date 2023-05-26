@@ -66,7 +66,7 @@ const App = () => {
           />
         </Grid>
 
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} md={8} style={{ marginTop: 25 }}>
           {/* Props to be passed to the Map component */}
           <Map
             setCoordinates={setCoordinates} // Passes the 'setCoordinates' function as a prop.

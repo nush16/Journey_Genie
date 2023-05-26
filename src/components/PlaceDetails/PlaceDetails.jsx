@@ -36,7 +36,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
       {/* Contains the main content of the Card */}
       <CardContent>
         {/* Displays the name of the place with a heading variant */}
-        <Typography gutterBottom variant="h5">
+        <Typography gutterBottom variant="h4">
           {place.name}
         </Typography>
         {/* Creates a box container */}
@@ -125,6 +125,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
           size="small"
           color="primary"
           onClick={() => window.open(place.web_url, "_blank")}
+          className={classes.links}
         >
           Trip Advisor
           {/* Shows a button to open the place's Trip Advisor page */}
@@ -133,6 +134,7 @@ const PlaceDetails = ({ place, selected, refProp }) => {
           size="small"
           color="primary"
           onClick={() => window.open(place.website, "_blank")}
+          className={classes.links}
         >
           Website
           {/* Shows a button to open the place's website */}

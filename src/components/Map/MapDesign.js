@@ -4,7 +4,7 @@ export default [
     elementType: "geometry",
     stylers: [
       {
-        color: "#f304d9",
+        color: "#8731eb",
       },
     ],
   },
@@ -19,10 +19,10 @@ export default [
         lightness: 20,
       },
       {
-        weight: "1.39",
+        visibility: "on",
       },
       {
-        color: "#ffffff",
+        color: "#e2e2e2",
       },
     ],
   },
@@ -31,16 +31,16 @@ export default [
     elementType: "labels.text.stroke",
     stylers: [
       {
-        weight: "0.96",
+        saturation: -31,
       },
       {
-        saturation: "9",
+        lightness: -33,
       },
       {
-        visibility: "on",
+        weight: 2,
       },
       {
-        color: "#000000",
+        gamma: 0.8,
       },
     ],
   },
@@ -61,10 +61,13 @@ export default [
         lightness: 30,
       },
       {
-        saturation: "9",
+        saturation: 30,
       },
       {
-        color: "#4c158c",
+        visibility: "on",
+      },
+      {
+        color: "#8731eb",
       },
     ],
   },
@@ -74,12 +77,6 @@ export default [
     stylers: [
       {
         saturation: 20,
-      },
-      {
-        visibility: "on",
-      },
-      {
-        color: "#4c1352",
       },
     ],
   },
@@ -105,14 +102,11 @@ export default [
       {
         saturation: -30,
       },
-    ],
-  },
-  {
-    featureType: "road",
-    elementType: "geometry.fill",
-    stylers: [
       {
-        color: "#7d0185",
+        visibility: "on",
+      },
+      {
+        color: "#9956aa",
       },
     ],
   },
@@ -126,9 +120,6 @@ export default [
       {
         lightness: 25,
       },
-      {
-        weight: "0.01",
-      },
     ],
   },
   {
@@ -137,12 +128,6 @@ export default [
     stylers: [
       {
         lightness: -20,
-      },
-      {
-        visibility: "off",
-      },
-      {
-        color: "#ff0000",
       },
     ],
   },

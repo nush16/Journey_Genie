@@ -14,7 +14,7 @@ export default makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    color: "#8731EB",
+    color: "#5112A3",
   },
   container: {
     padding: "25px",
@@ -27,11 +27,14 @@ export default makeStyles((theme) => ({
     overflow: "auto",
   },
   title: {
-    color: "#8731EB",
+    color: "#5112A3",
     fontWeight: 700,
   },
   listItem: {
-    color: "#8731EB",
+    color: "#5112A3",
     fontWeight: 500,
+  },
+  subHeading: {
+    fontWeight: 700,
   },
 }));
