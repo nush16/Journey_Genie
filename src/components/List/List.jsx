@@ -82,7 +82,7 @@ const List = ({
               onChange={(e) => setRating(e.target.value)}
               className={classes.listItem}
             >
-              <MenuItem value="">All</MenuItem>
+              <MenuItem value="All">All</MenuItem>
               <MenuItem value="3">Above 3.0</MenuItem>
               <MenuItem value="4">Above 4.0</MenuItem>
               <MenuItem value="4.5">Above 4.5</MenuItem>
@@ -98,7 +98,7 @@ const List = ({
                 place,
                 i // Maps through the 'places' array to render place details
               ) => (
-                <Grid item key={i} xs={12}>
+                <Grid ref={elRefs[i]} key={i} item xs={12}>
                   <PlaceDetails
                     selected={Number(childClicked) === i} // Checks if the current place is selected based on the childClicked state
                     refProp={elRefs[i]} // Passes the corresponding ref as a prop to the PlaceDetails component
