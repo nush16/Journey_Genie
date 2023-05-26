@@ -79,12 +79,12 @@ const Map = ({
                     alt={place.name} // Adds the name of the place as the alt text for the image
                   />
                   {/* Displays a read-only rating component for the place */}
-                  <Rating
+                  {/* <Rating
                     name="read-only"
                     size="small"
                     value={Number(place.rating)}
                     readOnly
-                  />
+                  /> */}
                 </Paper>
               )}
             </div>

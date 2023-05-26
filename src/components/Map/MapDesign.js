@@ -4,7 +4,7 @@ export default [
     elementType: "geometry",
     stylers: [
       {
-        color: "#202c3e",
+        color: "#f304d9",
       },
     ],
   },
@@ -64,7 +64,7 @@ export default [
         saturation: "9",
       },
       {
-        color: "#29446b",
+        color: "#4c158c",
       },
     ],
   },
@@ -74,6 +74,12 @@ export default [
     stylers: [
       {
         saturation: 20,
+      },
+      {
+        visibility: "on",
+      },
+      {
+        color: "#4c1352",
       },
     ],
   },
@@ -106,7 +112,7 @@ export default [
     elementType: "geometry.fill",
     stylers: [
       {
-        color: "#193a55",
+        color: "#7d0185",
       },
     ],
   },
@@ -131,6 +137,12 @@ export default [
     stylers: [
       {
         lightness: -20,
+      },
+      {
+        visibility: "off",
+      },
+      {
+        color: "#ff0000",
       },
     ],
   },

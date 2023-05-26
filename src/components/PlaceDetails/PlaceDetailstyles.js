@@ -18,7 +18,7 @@ export default makeStyles(() => ({
     color: "#FFFFFF",
   },
   card: {
-    backgroundColor: "#161616",
+    backgroundColor: "#202121",
     color: "#FFFFFF",
   },
 }));

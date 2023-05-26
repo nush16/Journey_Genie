@@ -28,9 +28,9 @@ export default makeStyles((theme) => ({
     overflow: "auto",
   },
   title: {
-    color: "#FFFFFF",
+    color: "#8731EB",
   },
   listItem: {
-    color: "#FFFFFF",
+    color: "#EBECF3",
   },
 }));
