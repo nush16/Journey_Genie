@@ -3,6 +3,7 @@ import { Autocomplete } from "@react-google-maps/api";
 import { AppBar, Toolbar, Typography, InputBase, Box } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import useStyles from "./Headerstyles";
+import Logo from "../../assets/JourneyGenie2.png";
 
 const Header = ({ setCoordinates }) => {
   const classes = useStyles();
@@ -25,8 +26,8 @@ const Header = ({ setCoordinates }) => {
       {/* Contains the content of the app bar */}
       <Toolbar className={classes.toolbar}>
         {/* Display the logo of the app */}
-        <Typography variant="h5" className={classes.title}>
-          Logo
+        <Typography variant="h7" className={classes.logo}>
+          <img src={Logo} alt="logo" />
         </Typography>
         <Box display="flex">
           {/* display Subtitle with additional information */}

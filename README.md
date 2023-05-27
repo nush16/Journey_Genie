@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Journey Genie
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A travel companion application that effectively handles data by utilising the Google Maps API, geolocation and React/Next.js. Developed skills in setting up and managing APIs using Google Cloud Platform (GCP). Utilised Travel Advisor API to retrieve location-specific information on restaurants, hotels, and activities for a highly customised user experience, including filtering of places based on rating. 
 
-## Available Scripts
+A live version of the website can be accessed here - youtube
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+1. Setup Node.js,[nvm](https://github.com/nvm-sh/nvm) can be used
+2. Clone the repository and install all the dependencies.
+3. Run ```npm install --legacy-peer-deps```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API Setup
+3 API's are used for this application, but only 2 keys are needed. Please see the below on how to add them to the application.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Below is how to setup an API key for
 
-### `npm test`
+### *RAPID API - Travel Advisor*
+1. Visit [RapidAPI](https://rapidapi.com/hub) and register an account
+2. Search for the [Travel Advisor](https://rapidapi.com/apidojo/api/travel-advisor) and click Subscribe to Test. A API key will be generated
+3. Copy the X-RapidAPI-Key key to 'Line 22' in api.js (REPLACE ```process.env.REACT_APP_RAPID_TRAVEL_API_KEY```)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### *Google Maps Setup*
+1. Visit [Google Cloud Platform](https://cloud.google.com/) and register an account
+2. Under 'Console' create a 'New Project' and provide all the necessary details
+3. Click 'APIs & Services' and then 'Library' 
+4. Search for 'Maps JavaScript API' and click enable it. After enabling it, click on Manage
+5. On the left-hand sidebar, click Credentials and then Create Credentials in the top
+6. Copy the API key to 'Line 22' in Map.jsx (REPLACE ```process.env.REACT_APP_GOOGLE_MAPS_API_KEY```)
 
-### `npm run build`
+### *Google Search Locations*
+1. Visit [Google Cloud Platform](https://cloud.google.com/) and register an account
+2. Click 'APIs & Services' and then 'Library' 
+3. Search for 'Places API' and click enable it. After enabling it, click on Manage
+4. On the left-hand sidebar, click Credentials and then Create Credentials in the top
+5. Copy the API key to 'Line 16' in index.html (REPLACE ```process.env.REACT_APP_GOOGLE_MAPS_API_KEY```)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Functionality and Features
+This website has the below features:
+* Get Restaurant information of any location in the world
+* Get Attractions information of any location in the world
+* Get Hotels information of any location in the world
+* Filter all of the above from user start ratings
+* Access reviews and websites of all of the Restaurents, Attractions and Hotels
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Acknowledgments
+Website inspiration and design - https://www.youtube.com/watch?v=UKdQjQX1Pko

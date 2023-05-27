@@ -29,8 +29,8 @@ const App = () => {
 
   //Filter Ratings
   useEffect(() => {
-    const filtered = places.filter((place) => Number(place.rating) > rating); // Filters the 'places' array based on the condition: place.rating > rating.
-    setFilteredPlaces(filtered); // Updates the 'filteredPlaces' state with the filtered array.
+    const filtered = places.filter((place) => Number(place.rating) > rating);
+    setFilteredPlaces(filtered);
   }, [rating]);
 
   // Get location data from API

@@ -44,4 +44,7 @@ export default makeStyles((theme) => ({
     justifyContent: "space-between",
     backgroundColor: "#440E8B",
   },
+  logo: {
+    // marginLeft: theme.spacing(-20),
+  },
 }));
